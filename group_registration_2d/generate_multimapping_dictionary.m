@@ -9,13 +9,13 @@ n_images = 10;  % Number of the multimapping images (image sampling times)
 nr_startups = 5;  % Number of the excitations prior to the steady state
 
 % Define the RF pulses (the actual imaging/readout flip angles will be defined later during B1 determination)
-t2prep_rf = [90 180 90];  % T2 prep脉冲
-inv_rf = 180;  % 反转脉冲
-fa = xDoc.Root.Seq.Basic.FlipAngle.Value;  % 名义上的读出翻转角
-n_ex = xDoc.Root.Seq.KSpace.Segments.Value;  % 激发次数，即每张图的相位编码线数
+t2prep_rf = [90 180 90];
+inv_rf = 180;
+fa = xDoc.Root.Seq.Basic.FlipAngle.Value;
+n_ex = xDoc.Root.Seq.KSpace.Segments.Value;
 
 % Flip angles of the RF pulses prior to the steady state
-SU_fa_list = zeros(1,nr_startups);  % 名义上的bSSFP准备脉冲翻转角
+SU_fa_list = zeros(1,nr_startups);
 for i = 1:nr_startups
     SU_fa_list(i) = fa*i/nr_startups;
 end
@@ -40,13 +40,13 @@ phi(10,1:3) = phi_t2prep;
 % TNT_dur = duration from last RF pulse in current cardiac cycle to the first
 % one in the next cycle. In this case, no RF pulses are performed during
 % inversion or T2 prep.
-centersegment = 41;  % 虽然n_ex=72，但由于做了partial Fourier，所以其中第41条相位编码线对应k0
+centersegment = 41;
 if xDoc.Root.Seq.PPA.Method.Value == 1
     Index = find (userOutput(:,3) == userOutput(1,3));
     for i = 2:n_images
         TNT_dur(i-1) = userOutput(Index(i),6)-userOutput(Index(i)-1,6);
     end
-    TNT_dur = TNT_dur/10;
+    TNT_dur = TNT_dur/10-nr_startups*TR;
     TNT_dur(n_images) = 0;
 else
     TNT_dur(1) = userOutput(1,5)+seq.TIdiff*10;
@@ -55,8 +55,8 @@ else
     end
     TNT_dur = TNT_dur/10;
 end
-TFEPP_dur = 20;  % 反转脉冲的持续时间
-TI = cell2mat(xDoc.Root.Seq.Basic.TI.Value)/1000;  % 反转脉冲中心到读出脉冲中心的时间
+TFEPP_dur = 20;
+TI = cell2mat(xDoc.Root.Seq.Basic.TI.Value)/1000;
 TFEPP_delay_dur(1) = TI(1)-(nr_startups+centersegment)*TR-TFEPP_dur*0.5;
 TFEPP_delay_dur(5) = TI(2)-(nr_startups+centersegment)*TR-TFEPP_dur*0.5;
 
@@ -116,7 +116,7 @@ para_list = para_list(1:para_num,:);
 
 fprintf('Generate the dictionary...\n')
 
-% tic
+tic
 D = zeros(n_images,para_num);
 parfor para_ind = 1:para_num
 
@@ -173,7 +173,7 @@ parfor para_ind = 1:para_num
     D(:,para_ind) = sim_im_val;
 
 end
-% toc
+toc
 
 % Take the magnitude
 D = abs(D);
