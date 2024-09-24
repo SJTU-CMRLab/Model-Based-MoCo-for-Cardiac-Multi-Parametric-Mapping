@@ -20,8 +20,6 @@ The proposed method achieved the lowest contour tracking errors (epicardium: 2.0
 The proposed method significantly improves the motion correction accuracy and mapping quality compared with non-MoCo and alternative image-based methods.
 
 
-
-
 # How to use
 
 Environment: We developed and tested the method on MATLAB R2023a.
@@ -29,9 +27,7 @@ Environment: We developed and tested the method on MATLAB R2023a.
 Demo: [moco_main.m](moco_main.m) shows how to apply the proposed MoCo method to cardiac Multimapping (described in our paper). By changing the signal dictionary, you may conveniently extend the method to your own qMRI applications.  
 
 
-
-
-# Publications
+# How to cite
 If you decide to use our code, please consider referring to the following paper:
 
 Chen H, Emu Y, Gao J, Chen Z, Aburas A, Hu C. Retrospective motion correction for cardiac multi-parametric mapping with dictionary matching-based image synthesis and a low-rank constraint. Magnetic Resonance in Medicine. 2024. doi:10.1002/mrm.30291
