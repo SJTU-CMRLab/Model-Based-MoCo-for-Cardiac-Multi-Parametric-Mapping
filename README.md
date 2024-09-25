@@ -22,9 +22,9 @@ The proposed method significantly improves the motion correction accuracy and ma
 
 # How to use
 
-Environment: We developed and tested the method on MATLAB R2023a.
+Environment: We developed and tested the method on MATLAB R2023a. Later versions of MATLAB are usually compatible.
 
-Demo: [moco_main.m](moco_main.m) shows how to apply the proposed MoCo method to cardiac Multimapping (described in our paper). By changing the signal dictionary, you may conveniently extend the method to your own qMRI applications.  
+Demo: [moco_main.m](moco_main.m) shows how to apply the proposed MoCo method to cardiac Multimapping (described in our paper). By changing the signal dictionary, you may conveniently extend the method to your own quantitative MRI applications, such as MOLLI-based T1 mapping. Have fun with it!
 
 
 # How to cite
