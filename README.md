@@ -24,10 +24,10 @@ The proposed method significantly improves the motion correction accuracy and ma
 
 Environment: We developed and tested the method on MATLAB R2023a. Later versions of MATLAB are usually compatible.
 
-Demo: [moco_main.m](moco_main.m) shows how to apply the proposed MoCo method to cardiac Multimapping (described in our paper). By changing the signal dictionary, you may conveniently extend the method to your own quantitative MRI applications, such as MOLLI-based T1 mapping. Have fun with it!
+Demo: [moco_main.m](moco_main.m) shows how to apply the proposed MoCo method to cardiac Multimapping (described in our paper). By changing the signal dictionary, you may conveniently extend the method to your own quantitative MRI applications, such as MOLLI-based T1 mapping. Hope you have fun with it :)
 
 
 # How to cite
-If you decide to use our code, please consider referring to the following paper:
+If you decide to use this code in your research, please consider referring to the following paper:
 
 Chen H, Emu Y, Gao J, Chen Z, Aburas A, Hu C. Retrospective motion correction for cardiac multi-parametric mapping with dictionary matching-based image synthesis and a low-rank constraint. Magnetic Resonance in Medicine. 2024. doi:10.1002/mrm.30291
