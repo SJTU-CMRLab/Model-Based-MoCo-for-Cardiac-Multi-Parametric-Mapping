@@ -9,7 +9,7 @@ To develop a model-based motion correction (MoCo) method that does not need an a
 
 **Methods**
 
-The proposed method constructs a hybrid loss that includes a dictionary-matching loss and a signal low-rankness loss, where the former registers the multi-contrast original images to a set of motion-free synthetic images and the latter forces the deformed images to be spatiotemporally coherent. We compared the proposed method with non-MoCo, a pairwise registration method (Pairwise-MI), and a groupwise registration method (pTVreg) via a free-breathing Multimapping dataset of 15 healthy subjects, both quantitatively and qualitatively.
+The proposed method, termed DM+LR, constructs a hybrid loss that includes a dictionary-matching loss and a signal low-rankness loss, where the former registers the multi-contrast original images to a set of motion-free synthetic images and the latter forces the deformed images to be spatiotemporally coherent. We compared the proposed method with non-MoCo, a pairwise registration method (Pairwise-MI), and a groupwise registration method (pTVreg) via a free-breathing Multimapping dataset of 15 healthy subjects, both quantitatively and qualitatively.
 
 **Results**
 
@@ -22,12 +22,12 @@ The proposed method significantly improves the motion correction accuracy and ma
 
 # How to use
 
-Environment: We developed and tested the method on MATLAB R2023a. Later versions of MATLAB are usually compatible.
+Environment: We developed and tested DM+LR on MATLAB R2023a. Later versions of MATLAB are usually compatible. We implemented the deep learning-based dictionary generation method using PyTorch 2.5.1.
 
-Demo: [moco_main.m](moco_main.m) shows how to apply the proposed MoCo method to cardiac Multimapping (described in our paper). By changing the signal dictionary, you may conveniently extend the method to your own quantitative MRI applications, such as MOLLI-based T1 mapping.
+Demo: moco_main.m shows how to apply the proposed MoCo method to cardiac Multimapping (described in our paper). By changing the signal dictionary, you may conveniently extend the method to your own quantitative MRI applications, such as MOLLI-based T1 mapping.
 
 
 # How to cite
 If you decide to use this code in your research, please consider referring to the following paper:
 
-Chen H, Emu Y, Gao J, Chen Z, Aburas A, Hu C. Retrospective motion correction for cardiac multi-parametric mapping with dictionary matching-based image synthesis and a low-rank constraint. Magnetic Resonance in Medicine. 2024. doi:10.1002/mrm.30291
+Chen, H., Emu, Y., Gao, J., Chen, Z., Aburas, A., & Hu, C. (2025). Retrospective motion correction for cardiac multi‐parametric mapping with dictionary matching‐based image synthesis and a low‐rank constraint. Magnetic Resonance in Medicine, 93(2), 550-562.
