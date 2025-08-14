@@ -11,6 +11,12 @@ To develop a model-based motion correction (MoCo) method that does not need an a
 
 The proposed method, termed DM+LR, constructs a hybrid loss that includes a dictionary-matching loss and a signal low-rankness loss, where the former registers the multi-contrast original images to a set of motion-free synthetic images and the latter forces the deformed images to be spatiotemporally coherent. We compared the proposed method with non-MoCo, a pairwise registration method (Pairwise-MI), and a groupwise registration method (pTVreg) via a free-breathing Multimapping dataset of 15 healthy subjects, both quantitatively and qualitatively.
 
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/SJTU-CMRLab/Dual_stage_NN/blob/main/Figure1.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/SJTU-CMRLab/Dual_stage_NN/blob/main/Figure1.png">
+ <img alt="The scheme of the dual-stage network and generation of the training labels" src="https://github.com/SJTU-CMRLab/Dual_stage_NN/blob/main/Figure1.png">
+</picture>
+
 **Results**
 
 The proposed method achieved the lowest contour tracking errors (epicardium: 2.00±0.39mm vs 4.93±2.29mm, 3.50±1.26mm, and 2.61±1.00mm, and endocardium: 1.84±0.34mm vs 4.93±2.40mm, 3.43±1.27mm, and 2.55±1.09mm for the proposed method, non-MoCo, Pairwise-MI, and pTVreg, respectively; all p<0.01) and the lowest dictionary matching errors among all methods. The proposed method also achieved the highest scores on the visual quality of mapping (T1: 4.74±0.33 vs 2.91±0.82, 3.58±0.87, and 3.97±1.05, and T2: 4.48±0.56 vs 2.59±0.81, 3.56±0.93, and 4.14±0.80 for the proposed method, non-MoCo, Pairwise-MI, and pTVreg, respectively; all p<0.01). Finally, the proposed method had similar T1 and T2 mean values and standard deviations relative to the breath-hold reference in nearly all myocardial segments, whereas all other methods led to significantly different T1 and T2 measures and increases of standard deviations in multiple segments.
