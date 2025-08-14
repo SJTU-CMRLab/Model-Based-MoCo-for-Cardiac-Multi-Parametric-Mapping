@@ -11,11 +11,7 @@ To develop a model-based motion correction (MoCo) method that does not need an a
 
 The proposed method, termed DM+LR, constructs a hybrid loss that includes a dictionary-matching loss and a signal low-rankness loss, where the former registers the multi-contrast original images to a set of motion-free synthetic images and the latter forces the deformed images to be spatiotemporally coherent. We compared the proposed method with non-MoCo, a pairwise registration method (Pairwise-MI), and a groupwise registration method (pTVreg) via a free-breathing Multimapping dataset of 15 healthy subjects, both quantitatively and qualitatively.
 
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://github.com/SJTU-CMRLab/Dual_stage_NN/blob/main/Figure1.png">
- <source media="(prefers-color-scheme: light)" srcset="https://github.com/SJTU-CMRLab/Dual_stage_NN/blob/main/Figure1.png">
- <img alt="The scheme of the dual-stage network and generation of the training labels" src="https://github.com/SJTU-CMRLab/Dual_stage_NN/blob/main/Figure1.png">
-</picture>
+![image](https://github.com/SJTU-CMRLab/Model-Based-MoCo-for-Cardiac-Multi-Parametric-Mapping/blob/master/schematic.png)
 
 **Results**
 
